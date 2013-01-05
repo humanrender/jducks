@@ -4,8 +4,8 @@ require "./jducks/lib/jducks.rb"
 
 JDucks.conf do |conf|
   conf.project_name = "Testsuite"
-  conf.files = "example/**/*.js"
-  conf.dir = "docs"
+  conf.files = "example/app/**/*.js"
+  conf.dir = "example/docs"
 end
 
 JDucks.build
