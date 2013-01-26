@@ -7,7 +7,7 @@ module JDucks
         partial_binding = JDucks::Core::TemplateBinding.new opts[:locals]
         self.send "_content_for=", {} unless _content_for
         partial_binding._content_for = _content_for
-        ERB.new(template_content).result(partial_binding.instance_eval { binding })
+        ERB.new(template_content, 0, "%<>", "@output_buffer").result(partial_binding.instance_eval { binding })
       end
 
     end

@@ -8,11 +8,11 @@ module JDucks
       end
 
       def build_template template
-        ERB.new(template).result(@template_binding.instance_eval { binding })
+        ERB.new(template, 0, "%<>", "@output_buffer").result(@template_binding.instance_eval { binding })
       end
 
       def content_with_layout &block
-        ERB.new(file_content "layout").result(@template_binding.instance_eval { binding })
+        ERB.new(file_content("layout"), 0, "%<>", "@output_buffer").result(@template_binding.instance_eval { binding })
       end
 
     end
