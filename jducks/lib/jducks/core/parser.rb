@@ -44,7 +44,6 @@ module JDucks
           if current_class && str.match(Regexp.new(%~\\#{current_class}~))
             current_class = nil
           else
-            # debugger  
             yml = YAML.load str#.gsub /^\s{2}/, ""
             if yml["class"]
               current_class = yml["class"]

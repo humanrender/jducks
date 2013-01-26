@@ -4,7 +4,7 @@
 <html>
   <head>
     <title><%= conf.project_name %> | <%= complete_resource_name %></title>
-    <link rel="stylesheet" type="text/css" href="<%=Pathname.new(file_path).relative_path_from(Pathname.new("./#{conf.dir}/template/stylesheets/styles.css"))%>">
+    <link rel="stylesheet" type="text/css" href="<%= relative_path_for "stylesheets/styles.css" %>">
   </head>
   <body>
     <header role="banner">
@@ -12,9 +12,6 @@
     </header>
     <article role="main">
       <%= yield %>
-    </articla>
+    </article>
   </body>
 </html>
-
-
-<!-- Pathname.new("./#{conf.dir}/template/stylesheets/styles.css").relative_path_from() -->

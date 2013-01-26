@@ -9,14 +9,13 @@ module JDucks
   def self.build    
     conf = JDucks::Core::Conf.instance
 
-    FileUtils.rm_rf conf.dir
+    # FileUtils.rm_rf conf.dir
     
     if conf.files.class != Array
       conf.files = [conf.files]
     end
-    conf.template ||= :basic_html
 
-    self.build_dir conf.dir
+    conf.docs_dir ||= conf.dir
 
     parser = JDucks::Core::Parser.new
     template = self.build_template conf
@@ -37,22 +36,24 @@ module JDucks
 
   def self.build_template conf
     conf_dir = "./"+conf.dir
-    require conf_dir+"/template/template.rb" if ready = File.exists?(conf.dir+"/template/template.rb")
-    
-    template_class = JDucks::Core::Template.get_template_class(conf.template)
+    output_dir = "./"+conf.docs_dir
+    template_dir = "#{conf_dir}/#{conf.template}"
+    unless File.exists? template_dir
+      self.build_dir conf.dir
 
-    unless template_class
-      require_relative "jducks/templates/#{conf.template}/template/template"
-      template_class = JDucks::Core::Template.get_template_class(conf.template)
+      template_path = File.dirname(__FILE__)+"/jducks/templates/"+conf.template
+      copy_template_files template_path, template_dir
     end
 
-    self.copy_template_files template_class, conf.dir+"/template" unless ready
-
-    template_class.new conf_dir
+    require template_dir+"/template.rb"
+    template_class = JDucks::Core::Template.get_template_class(conf.template)
+    template = template_class.new output_dir
+    template.template_dir = template_dir
+    template
   end
 
-  def self.copy_template_files template_class, dir
-    FileUtils.cp_r template_class.template_dir, dir
+  def self.copy_template_files template_dir, dir
+    FileUtils.cp_r template_dir, dir
   end
 
 end

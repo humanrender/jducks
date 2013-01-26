@@ -5,12 +5,15 @@ module JDucks
     class Conf
       include Singleton
 
-      attr_accessor :files, :template, :dir, :layout, :project_name
+      attr_accessor :files, :template, :dir, :layout, :project_name, :docs_dir
+
+      def ignored_files
+      end
 
       def initialize
-        @template ||= "basic-html"
-        @dir ||= "docs"
-        @project_name ||= "jducks"
+        @template = "html"
+        @dir = "docs"
+        @project_name = "jducks"
       end
 
     end
