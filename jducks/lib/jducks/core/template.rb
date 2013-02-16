@@ -54,9 +54,9 @@ module JDucks
         self.build_page_with_template page_name, "templates/function", locals
       end
 
-      def build_page_with_template page_name, template, locals
+      def build_page_with_template page_name, tmpl, locals
         page_name = page_name+@file_ext
-        template = file_content template
+        tmpl = file_content tmpl
         dir_path = @dir+"#{"/"+locals["namespace"].gsub(".", "/") if locals["namespace"]}"
         file_path = dir_path+"/"+(page_filename locals["resource_name"])
 
@@ -66,7 +66,12 @@ module JDucks
 
         FileUtils.mkpath dir_path unless File.exists? dir_path
         File.open(file_path, 'w') { |file| 
-          file.write( content_with_layout{build_template template} )  
+          output = ""
+          content = content_with_layout do
+            output.concat %~#{@template_binding.output}~
+            build_template tmpl
+          end
+          file.write( tidy output+content )  
         }
         page_name
       end
@@ -87,12 +92,17 @@ module JDucks
         yield
       end
 
+      def tidy content
+        content
+      end
+
     end
 
     class TemplateBinding < OpenStruct
       include JDucks::Helpers::PathHelper
       include JDucks::Helpers::RenderingHelper
       include JDucks::Helpers::CapturingHelper
+      attr_accessor :output
     end
 
   end
