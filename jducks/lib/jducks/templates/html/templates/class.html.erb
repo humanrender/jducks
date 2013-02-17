@@ -1,0 +1,55 @@
+<%
+  # debugger
+  constructor = %~function #{resource_name}(#{(arguments || {}).map{|name, description| 
+    "#{"<span>#{$~[1]}</span> " if description.match /^\((.+?)\)/}#{name}" 
+  }.join(", ")})#{":#{return_type returns}"}~
+%><article role="main" class="function nine-twelfths grid__item mtm iplm iprm">
+  <h1 class="m-header"><%= complete_resource_name %> <% if extends %><small>extends: <a href="<%=url_for extends%>"><%=extends%></a></small><%end%></h1>
+  <% if dependencies %>
+  <small>Dependencies: <%= dependencies.map do |dependency|
+    %~<a href="#{url_for dependency}">#{dependency}</a>~
+  end.join(",") %></small><%end%>
+
+  <% if dependency_of %>
+  <small>Dependency of: <%= dependency_of.map do |dependency|
+    %~<a href="#{url_for dependency}">#{dependency}</a>~
+  end.join(",") %></small><%end%>
+
+  <% if description %><h2>Description</h2>
+  <p><%= description %></p>
+  <% end %>
+
+  <h2>Constructor</h2>
+  <p><%= constructor %></p>
+  
+  
+  <% if arguments %><h2>Arguments</h2>
+  <dl><% arguments.each do |arg, desc| %>
+    <dt><%=arg%></dt>
+    <dd><%=desc%></dd>
+  <% end %></dl>
+  <% end %>
+
+  <h2>Methods</h2>
+  <ul>
+  <% self_methods.each do |method| %>
+    <li>
+      <%= method.to_yaml %>
+    </li>
+  <% end %>
+  </ul>
+  <% if example  || html_example%>
+  
+  <h2>Example Usage</h2>
+  <pre><%= example %></pre>
+  
+  <% if html_example %>
+  <div>
+    <%= html_example %>
+  </div>
+  <pre><%= CGI.escapeHTML html_example %>  </pre>
+  <% end %>
+
+  <% end %>
+  
+</article>

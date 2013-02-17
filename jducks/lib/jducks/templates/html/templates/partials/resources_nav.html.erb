@@ -1,0 +1,19 @@
+<%
+  sitemap = get_sitemap resources
+%><div class="three-twelfths grid__item">
+  <nav class="resources_nav mtm iplm iprm">
+    <h2 class="title">Resources</h2>
+    <% sitemap.each do |group, items| 
+         unless items.empty? %>
+      <strong class="group_name"><%= group.to_s %></strong>
+      <ul>
+        <% items.each do |item_name, data| %>
+          <li class="resource">
+            <a href="<%=url_for data%>"><%=item_name%></a>
+          </li>
+        <% end %>
+      </ul>
+    <%   end
+       end %>
+  </nav>
+</div>
