@@ -4,6 +4,8 @@ require "erb"
 require_relative "../helpers/path_helper"
 require_relative "../helpers/rendering_helper"
 require_relative "../helpers/capturing_helper"
+require_relative "../helpers/url_helper"
+require_relative "../helpers/resource_helper"
 
 module JDucks
   module Core
@@ -32,12 +34,17 @@ module JDucks
         @file_ext = file_ext
         @tmpl_ext = tmpl_ext
         @template_binding = nil
+        @data = nil
       end
 
       def build data
         copy_files
+        @data = data
         data[:function].each do |page_name, properties|
           render_function_page page_name, properties
+        end
+        data[:class].each do |page_name, properties|
+          render_class_page page_name, properties
         end
       end
 
@@ -54,6 +61,10 @@ module JDucks
         self.build_page_with_template page_name, "templates/function", locals
       end
 
+      def render_class_page page_name, locals
+        self.build_page_with_template page_name, "templates/class", locals
+      end
+
       def build_page_with_template page_name, tmpl, locals
         page_name = page_name+@file_ext
         tmpl = file_content tmpl
@@ -63,6 +74,7 @@ module JDucks
         @template_binding = TemplateBinding.new locals
         @template_binding.template = self
         @template_binding.file_path = file_path
+        @template_binding.parsed_items = @data
 
         FileUtils.mkpath dir_path unless File.exists? dir_path
         File.open(file_path, 'w') { |file| 
@@ -102,6 +114,8 @@ module JDucks
       include JDucks::Helpers::PathHelper
       include JDucks::Helpers::RenderingHelper
       include JDucks::Helpers::CapturingHelper
+      include JDucks::Helpers::UrlHelper
+      include JDucks::Helpers::ResourceHelper
       attr_accessor :output
     end
 

@@ -41,23 +41,27 @@ module JDucks
 
         blocks.each_with_index do |block, index|
           str = block[0]
-          if current_class && str.match(Regexp.new(%~\\#{current_class}~))
-            current_class = nil
-          else
+          # if current_class && str.match(Regexp.new(%~\\#{current_class}~))
+          #   current_class = nil
+          # else
             yml = YAML.load str#.gsub /^\s{2}/, ""
             if yml["class"]
               current_class = yml["class"]
             end
             resource_type = [:class, :function, :method].find {|r| yml[r.to_s]}
             resource = yml[resource_type.to_s]
+
             if resource_type == :class
-              yml["methods"] ||= []
+              yml["self_methods"] ||= []
+            elsif resource_type == :method
+              (@data[:class][current_class]["self_methods"] ||= []).push(yml)
             end
+
             complete_name = %~#{yml["namespace"]+"." if yml["namespace"]}#{resource}~
             yml["resource_name"] = resource
             yml["complete_resource_name"] = complete_name
-            @data[resource_type][complete_name] = yml
-          end
+            @data[resource_type][complete_name] = yml unless resource_type == :method
+          # end
         end
 
         @data

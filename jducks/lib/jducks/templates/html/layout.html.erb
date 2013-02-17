@@ -5,13 +5,13 @@
   <head>
     <title><%= conf.project_name %> | <%= complete_resource_name %></title>
     <link rel="stylesheet" type="text/css" href="<%= relative_path_for "stylesheets/styles.css" %>">
+    <link rel="stylesheet" type="text/css" href="<%= relative_path_for "stylesheets/csswizardry-grids.css" %>">
   </head>
   <body>
-    <header role="banner">
-      <a href="#" class="project_name"><%= conf.project_name %></a>
-    </header>
-    <article role="main">
+    <%=   render "partials/header", :locals=>{:project_name=>conf.project_name} %>
+    <div class="grid">
+      <%= render "partials/resources_nav", :locals=>{:resources=>parsed_items} %>
       <%= yield %>
-    </article>
+    </div>
   </body>
 </html>

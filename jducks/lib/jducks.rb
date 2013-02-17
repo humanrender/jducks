@@ -9,7 +9,7 @@ module JDucks
   def self.build    
     conf = JDucks::Core::Conf.instance
 
-    # FileUtils.rm_rf conf.dir
+    FileUtils.rm_rf conf.dir
     
     if conf.files.class != Array
       conf.files = [conf.files]
