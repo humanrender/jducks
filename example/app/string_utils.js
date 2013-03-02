@@ -1,8 +1,6 @@
 /***
 function: to_s
 description: Converts objecto to string
-dependency_of:
-  - trim
 arguments:
   str: (*) Object
 example: >
@@ -36,8 +34,6 @@ var StringUtils = {
   function: to_s
   description: Converts objecto to string
   namespace: StringUtils
-  dependency_of:
-    - StringUtils.trim
   arguments:
     str: (*) Object
   example: >
@@ -90,8 +86,6 @@ StringUtils.SuperString = function(string){
   class: SuperObject
   namespace: StringUtils
   description: Extended Object class
-  dependency_of:
-    - StringUtils.SuperString
   arguments:
     obj: (Object) Object
 ***/

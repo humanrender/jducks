@@ -10,15 +10,20 @@ module JDucks
           :namespaces=>{}
         }
 
-        resources.each do |group, items|
+        resources.reject{|key, resources| key.to_s == "dependencies"}.each do |group, items|
           items.each do |item_name, data|
-            ns = if data["namespace"]
-              build_namespace(sitemap, data["namespace"])
-            end
-            if data["function"]
-              (ns || sitemap[:functions])[data["function"]] = data
-            elsif data["class"] || data["method"]
-              (ns || sitemap[:classes])[data["class"]] = data
+            begin
+              ns = if data["namespace"]
+                build_namespace(sitemap, data["namespace"])
+              end
+              if data["function"]
+                (ns || sitemap[:functions])[data["function"]] = data
+              elsif data["class"] || data["method"]
+                (ns || sitemap[:classes])[data["class"]] = data
+              end
+            rescue Exception => e
+              debugger
+              e
             end
           end
         end

@@ -10,7 +10,7 @@
     %~<a href="#{url_for dependency}">#{dependency}</a>~
   end.join(",") %></small><%end%>
 
-  <% if dependency_of %>
+  <% if dependency_of && !dependency_of.empty? %>
   <small>Dependency of: <%= dependency_of.map do |dependency|
     %~<a href="#{url_for dependency}">#{dependency}</a>~
   end.join(",") %></small><%end%>

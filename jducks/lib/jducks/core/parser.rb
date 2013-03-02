@@ -9,6 +9,7 @@ module JDucks
           :function=>{},
           :class=>{}
         }
+        @dependencies = {}
       end
 
       def parse_files files = []
@@ -41,9 +42,7 @@ module JDucks
 
         blocks.each_with_index do |block, index|
           str = block[0]
-          # if current_class && str.match(Regexp.new(%~\\#{current_class}~))
-          #   current_class = nil
-          # else
+
             yml = YAML.load str#.gsub /^\s{2}/, ""
             if yml["class"]
               current_class = yml["class"]
@@ -60,6 +59,17 @@ module JDucks
             complete_name = %~#{yml["namespace"]+"." if yml["namespace"]}#{resource}~
             yml["resource_name"] = resource
             yml["complete_resource_name"] = complete_name
+
+            if(dependencies = @dependencies[complete_name])
+              yml["dependency_of"] = dependencies
+            else
+              @dependencies[complete_name] = yml["dependency_of"] = []
+            end
+
+            yml["dependencies"].each do |dependency|
+              (@dependencies[dependency] ||= []) << complete_name
+            end if yml["dependencies"]
+
             @data[resource_type][complete_name] = yml unless resource_type == :method
           # end
         end
