@@ -1,19 +1,19 @@
 <%
   sitemap = get_sitemap resources
-%><div class="three-twelfths grid__item">
-  <nav class="resources_nav mtm iplm iprm">
-    <h2 class="title">Resources</h2>
+%><nav role="navigation">
+  <strong class="navigation_title">Index <a href="#" class="nav-toggle" data-toggle></a></strong>
+  <ul class="navigation_links">
     <% sitemap.each do |group, items| 
          unless items.empty? %>
-      <strong class="group_name"><%= group.to_s %></strong>
-      <ul>
+    <li>
+      <a href="#" class="resource_type"><%= group.to_s %></a>
+      <ul class="resources_list">
         <% items.each do |item_name, data| %>
-          <li class="resource">
-            <a href="<%=url_for data%>"><%=item_name%></a>
-          </li>
+          <li class="resource"><a href="<%=url_for data%>"><%=item_name%></a></li>
         <% end %>
       </ul>
-    <%   end
-       end %>
-  </nav>
-</div>
+    <li>
+    <%  end 
+    end %>
+  </ul>
+</nav>

@@ -1,8 +1,9 @@
 <%
   # debugger
-  declaration = %~function(#{(arguments || {}).map{|name, description| 
-    "#{"<span>#{$~[1]}</span> " if description.match /^\((.+?)\)/}#{name}" 
-  }.join(", ")})#{":#{return_type returns}"}~
+  declaration = ""
+  # %~function(#{(arguments || {}).map{|name, description| 
+  #   "#{"<span>#{$~[1]}</span> " if description.match /^\((.+?)\)/}#{name}" 
+  # }.join(", ")})#{":#{return_type returns}"}~
 %><article role="main" class="function nine-twelfths grid__item mtm iplm iprm">
   <h1 class="m-header"><%= complete_resource_name %></h1>
   <% if dependencies %>

@@ -74,9 +74,10 @@ function SuperObject(obj){
     - StringUtils.SuperObject
   description: Extended string class
   arguments:
-    string: (string) Regular String
+    type: string
+    description: Regular String
+    required: true
 ***/
-
 
 StringUtils.SuperString = function(string){
 
@@ -111,7 +112,7 @@ StringUtils.SuperObject.prototype.to_json = function(){
     - SuperObject
   description: Extended string class
   arguments:
-    string: (string) Regular String
+    string: "(String)(default: \"Hello World!\") Regular String"
 ***/
 
 
@@ -125,5 +126,21 @@ function SuperString(string){
 ***/
 
 StringUtils.SuperString.prototype.trim = function(){
+  
+}
+
+/*** 
+  method: to_json
+  description: Remove whitespaces from both ends
+  arguments: 
+    string: "(Boolean)(default: false)(required) Return Object (false) or string (true)"
+  example: |
+    var str = new SuperString("Hello")
+    str.to_json(true) // "['Hello']"
+    str.to_json(false) // ["Hello"]
+    str.to_json() // ["Hello"]
+***/
+
+StringUtils.SuperString.prototype.to_json = function(string){
   
 }

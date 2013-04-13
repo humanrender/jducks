@@ -6,6 +6,7 @@ require_relative "../helpers/rendering_helper"
 require_relative "../helpers/capturing_helper"
 require_relative "../helpers/url_helper"
 require_relative "../helpers/resource_helper"
+require_relative "../helpers/template_helper"
 
 module JDucks
   module Core
@@ -116,6 +117,7 @@ module JDucks
       include JDucks::Helpers::CapturingHelper
       include JDucks::Helpers::UrlHelper
       include JDucks::Helpers::ResourceHelper
+      include JDucks::Helpers::TemplateHelper
       attr_accessor :output
     end
 

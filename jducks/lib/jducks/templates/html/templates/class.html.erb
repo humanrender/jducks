@@ -1,47 +1,67 @@
-<%
-  # debugger
-  constructor = %~function #{resource_name}(#{(arguments || {}).map{|name, description| 
-    "#{"<span>#{$~[1]}</span> " if description.match /^\((.+?)\)/}#{name}" 
-  }.join(", ")})#{":#{return_type returns}"}~
-%><article role="main" class="function nine-twelfths grid__item mtm iplm iprm">
-  <h1 class="m-header"><%= complete_resource_name %> <% if extends %><small>extends: <a href="<%=url_for extends%>"><%=extends%></a></small><%end%></h1>
-  <% if dependencies %>
-  <small>Dependencies: <%= dependencies.map do |dependency|
-    %~<a href="#{url_for dependency}">#{dependency}</a>~
-  end.join(",") %></small><%end%>
+<article class="project_details">
+  <header>
+    <h1 class="m-header" id="title"><%= complete_resource_name %> <% if extends %><small>extends: <a href="<%=url_for extends%>"><%=extends%></a></small><%end%></h1>
+    <%= render "partials/declared_at", :locals=>{
+      :file_path=>parsed_items[:sources][source][:path],
+      :line=>declared_at,
+      :source=>source
+    } %>
+    <% if dependencies %>
+    <small>Dependencies: <%= dependencies.map do |dependency|
+      %~<a href="#{url_for dependency}">#{dependency}</a>~
+    end.join(",") %></small><%end%>
 
-  <% if dependency_of && !dependency_of.empty? %>
-  <small>Dependency of: <%= dependency_of.map do |dependency|
-    %~<a href="#{url_for dependency}">#{dependency}</a>~
-  end.join(",") %></small><%end%>
+    <% if dependency_of && !dependency_of.empty? %>
+    <small>Dependency of: <%= dependency_of.map do |dependency|
+      %~<a href="#{url_for dependency}">#{dependency}</a>~
+    end.join(",") %></small><%end%>
+  </header>
 
-  <% if description %><h2>Description</h2>
-  <p><%= description %></p>
-  <% end %>
-
-  <h2>Constructor</h2>
-  <p><%= constructor %></p>
+  <% if description %>
+  <section id="description">
+    <h1 class="m-subheader">Description</h1>
+    <div class="m-text">
+      <p><%= description %></p>
+    </div>
+  </section><% end %>
   
+  <section id="constructor">
+    <h1 class="m-subheader">Constructor</h1>
+    <pre class="code-example"><code class="javascript"><%= function_declaration resource_name, arguments %></code></pre>
   
-  <% if arguments %><h2>Arguments</h2>
-  <dl><% arguments.each do |arg, desc| %>
-    <dt><%=arg%></dt>
-    <dd><%=desc%></dd>
-  <% end %></dl>
-  <% end %>
+    <% if arguments %><h2 class="m-subheader" id="arguments">Arguments</h2>
+    <%= render "partials/arguments_list", :locals=>{:arguments=>arguments, :method_name => "constructor"} %>
+    <% end %>
+  </section>
+  
+  <section id="methods">
+    <h1 class="m-subheader">Methods</h1>
+    <% if self_methods 
+        self_methods.each do |method_properties| 
+          arguments = method_properties["arguments"]
+          method_name = method_properties["method"]
+          example = method_properties["example"] %>
+        <article id="<%=method_properties['method']%>">
+          <h2><%=method_name%></h2>
+          <%= render "partials/declared_at", :locals=>{
+            :file_path=>parsed_items[:sources][method_properties["source"]][:path],
+            :line=>method_properties["declared_at"],
+            :source=>method_properties["source"]
+          } %>
+          <pre class="code-example"><code class="javascript"><%= function_declaration method_name, arguments %></code></pre>
+          <% if arguments && arguments.length != 0 %><h3 class="m-subheader" id="<%=method_name%>-arguments">Arguments</h3>
+          <%= render "partials/arguments_list", :locals=>{:arguments=>arguments, :method_name=>method_name} %>
+          <% end %>
+          <% if example %>
+            <h3 class="m-subheader">Example</h3>
+            <pre class="code-example"><code class="javascript"><%=example%></code></pre>
+          <% end %>
+        </article>
+    <%  end
+       end %>
+  </section>
 
-  <h2>Methods</h2>
-  <ul>
-  <% self_methods.each do |method| %>
-    <li>
-      <%= method.to_yaml %>
-    </li>
-  <% end %>
-  </ul>
-  <% if example  || html_example%>
-  
-  <h2>Example Usage</h2>
-  <pre><%= example %></pre>
+<!-- 
   
   <% if html_example %>
   <div>
@@ -49,7 +69,5 @@
   </div>
   <pre><%= CGI.escapeHTML html_example %>  </pre>
   <% end %>
-
-  <% end %>
   
-</article>
+-->

@@ -10,9 +10,10 @@ module JDucks
           :namespaces=>{}
         }
 
-        resources.reject{|key, resources| key.to_s == "dependencies"}.each do |group, items|
-          items.each do |item_name, data|
-            begin
+        resources.
+          reject{|key, resources| ["dependencies", "sources"].include? key.to_s}.
+          each do |group, items|
+            items.each do |item_name, data|
               ns = if data["namespace"]
                 build_namespace(sitemap, data["namespace"])
               end
@@ -21,13 +22,8 @@ module JDucks
               elsif data["class"] || data["method"]
                 (ns || sitemap[:classes])[data["class"]] = data
               end
-            rescue Exception => e
-              debugger
-              e
             end
-          end
         end
-
         sitemap
 
       end #get_sitemap

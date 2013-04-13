@@ -1,0 +1,22 @@
+<ul class="argument-list">
+  <% arguments.each do |arg, properties| %><li data-collapsable>
+    <div class="argument-details">
+      <h3 id="<%=method_name%>-argument-<%=arg%>" class="name" data-toggle><%=arg%></h3>
+      <dl>
+        <% if properties[:type] %><dt class="type">Argument type</dt>
+        <dd><%=properties[:type]%></dd><% end %>
+        <% if properties[:required] %><dt class="property">Required</dt>
+        <dd>true</dd><% end %>
+        <% if properties[:default] %><dt class="default">default</dt>
+        <dd><%=properties[:default]%></dd><% end %>
+      </dl>
+    </div>
+    
+    <div class="argument-description" data-description>
+      <div class="m-text">
+        <p><%=properties[:description]%></p>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
