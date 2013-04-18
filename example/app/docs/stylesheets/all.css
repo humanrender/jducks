@@ -1,764 +1,375 @@
 /* normalize.css v2.0.1 | MIT License | git.io/normalize */
-/* ==========================================================================
-   HTML5 display definitions
-   ========================================================================== */
-/*
- * Corrects `block` display not defined in IE 8/9.
- */
+/* ========================================================================== HTML5 display definitions ========================================================================== */
+/* Corrects `block` display not defined in IE 8/9. */
 /* line 22, partials/_normalize.css.scss */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section,
-summary {
-  display: block; }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
 
-/*
- * Corrects `inline-block` display not defined in IE 8/9.
- */
+/* Corrects `inline-block` display not defined in IE 8/9. */
 /* line 32, partials/_normalize.css.scss */
-audio,
-canvas,
-video {
-  display: inline-block; }
+audio, canvas, video { display: inline-block; }
 
-/*
- * Prevents modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
+/* Prevents modern browsers from displaying `audio` without controls. Remove excess height in iOS 5 devices. */
 /* line 41, partials/_normalize.css.scss */
-audio:not([controls]) {
-  display: none;
-  height: 0; }
+audio:not([controls]) { display: none; height: 0; }
 
-/*
- * Addresses styling for `hidden` attribute not present in IE 8/9.
- */
+/* Addresses styling for `hidden` attribute not present in IE 8/9. */
 /* line 50, partials/_normalize.css.scss */
-[hidden] {
-  display: none; }
+[hidden] { display: none; }
 
-/* ==========================================================================
-   Base
-   ========================================================================== */
-/*
- * 1. Sets default font family to sans-serif.
- * 2. Prevents iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
+/* ========================================================================== Base ========================================================================== */
+/* 1. Sets default font family to sans-serif. 2. Prevents iOS text size adjust after orientation change, without disabling user zoom. */
 /* line 64, partials/_normalize.css.scss */
-html {
-  font-family: Open Sans, Helvetica, Arial, sans-serif;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */ }
+html { font-family: Open Sans, Helvetica, Arial, sans-serif; /* 1 */ -webkit-text-size-adjust: 100%; /* 2 */ -ms-text-size-adjust: 100%; /* 2 */ }
 
-/*
- * Removes default margin.
- */
+/* Removes default margin. */
 /* line 74, partials/_normalize.css.scss */
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased; }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
 
-/* ==========================================================================
-   Links
-   ========================================================================== */
-/*
- * Addresses `outline` inconsistency between Chrome and other browsers.
- */
+/* ========================================================================== Links ========================================================================== */
+/* Addresses `outline` inconsistency between Chrome and other browsers. */
 /* line 89, partials/_normalize.css.scss */
-a:focus {
-  outline: thin dotted; }
+a:focus { outline: thin dotted; }
 
-/*
- * Improves readability when focused and also mouse hovered in all browsers.
- */
+/* Improves readability when focused and also mouse hovered in all browsers. */
 /* line 98, partials/_normalize.css.scss */
-a:active,
-a:hover {
-  outline: 0; }
+a:active, a:hover { outline: 0; }
 
-/* ==========================================================================
-   Typography
-   ========================================================================== */
-/*
- * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
- * Safari 5, and Chrome.
- */
+/* ========================================================================== Typography ========================================================================== */
+/* Addresses `h1` font sizes within `section` and `article` in Firefox 4+, Safari 5, and Chrome. */
 /* line 111, partials/_normalize.css.scss */
-h1 {
-  font-size: 2em; }
+h1 { font-size: 2em; }
 
-/*
- * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
- */
+/* Addresses styling not present in IE 8/9, Safari 5, and Chrome. */
 /* line 119, partials/_normalize.css.scss */
-abbr[title] {
-  border-bottom: 1px dotted; }
+abbr[title] { border-bottom: 1px dotted; }
 
-/*
- * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
- */
+/* Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
 /* line 128, partials/_normalize.css.scss */
-b,
-strong {
-  font-weight: bold; }
+b, strong { font-weight: bold; }
 
-/*
- * Addresses styling not present in Safari 5 and Chrome.
- */
+/* Addresses styling not present in Safari 5 and Chrome. */
 /* line 136, partials/_normalize.css.scss */
-dfn {
-  font-style: italic; }
+dfn { font-style: italic; }
 
-/*
- * Addresses styling not present in IE 8/9.
- */
+/* Addresses styling not present in IE 8/9. */
 /* line 144, partials/_normalize.css.scss */
-mark {
-  background: #ff0;
-  color: #000; }
+mark { background: #ff0; color: #000; }
 
-/*
- * Corrects font family set oddly in Safari 5 and Chrome.
- */
+/* Corrects font family set oddly in Safari 5 and Chrome. */
 /* line 157, partials/_normalize.css.scss */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em; }
+code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
 
-/*
- * Improves readability of pre-formatted text in all browsers.
- */
+/* Improves readability of pre-formatted text in all browsers. */
 /* line 166, partials/_normalize.css.scss */
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 
-/*
- * Sets consistent quote types.
- */
+/* Sets consistent quote types. */
 /* line 176, partials/_normalize.css.scss */
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019"; }
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
 
-/*
- * Addresses inconsistent and variable font size in all browsers.
- */
+/* Addresses inconsistent and variable font size in all browsers. */
 /* line 184, partials/_normalize.css.scss */
-small {
-  font-size: 80%; }
+small { font-size: 80%; }
 
-/*
- * Prevents `sub` and `sup` affecting `line-height` in all browsers.
- */
+/* Prevents `sub` and `sup` affecting `line-height` in all browsers. */
 /* line 193, partials/_normalize.css.scss */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 
 /* line 200, partials/_normalize.css.scss */
-sup {
-  top: -0.5em; }
+sup { top: -0.5em; }
 
 /* line 204, partials/_normalize.css.scss */
-sub {
-  bottom: -0.25em; }
+sub { bottom: -0.25em; }
 
-/* ==========================================================================
-   Embedded content
-   ========================================================================== */
-/*
- * Removes border when inside `a` element in IE 8/9.
- */
+/* ========================================================================== Embedded content ========================================================================== */
+/* Removes border when inside `a` element in IE 8/9. */
 /* line 216, partials/_normalize.css.scss */
-img {
-  border: 0; }
+img { border: 0; }
 
-/*
- * Corrects overflow displayed oddly in IE 9.
- */
+/* Corrects overflow displayed oddly in IE 9. */
 /* line 224, partials/_normalize.css.scss */
-svg:not(:root) {
-  overflow: hidden; }
+svg:not(:root) { overflow: hidden; }
 
-/* ==========================================================================
-   Figures
-   ========================================================================== */
-/*
- * Addresses margin not present in IE 8/9 and Safari 5.
- */
+/* ========================================================================== Figures ========================================================================== */
+/* Addresses margin not present in IE 8/9 and Safari 5. */
 /* line 236, partials/_normalize.css.scss */
-figure {
-  margin: 0; }
+figure { margin: 0; }
 
-/* ==========================================================================
-   Forms
-   ========================================================================== */
-/*
- * Define consistent border, margin, and padding.
- */
+/* ========================================================================== Forms ========================================================================== */
+/* Define consistent border, margin, and padding. */
 /* line 248, partials/_normalize.css.scss */
-fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em; }
+fieldset { border: 1px solid silver; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
 
-/*
- * 1. Corrects color not being inherited in IE 8/9.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
+/* 1. Corrects color not being inherited in IE 8/9. 2. Remove padding so people aren't caught out if they zero out fieldsets. */
 /* line 259, partials/_normalize.css.scss */
-legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  /* 2 */ }
+legend { border: 0; /* 1 */ padding: 0; /* 2 */ }
 
-/*
- * 1. Corrects font family not being inherited in all browsers.
- * 2. Corrects font size not being inherited in all browsers.
- * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
- */
+/* 1. Corrects font family not being inherited in all browsers. 2. Corrects font size not being inherited in all browsers. 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome */
 /* line 273, partials/_normalize.css.scss */
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 2 */
-  margin: 0;
-  /* 3 */ }
+button, input, select, textarea { font-family: inherit; /* 1 */ font-size: 100%; /* 2 */ margin: 0; /* 3 */ }
 
-/*
- * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
+/* Addresses Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet. */
 /* line 285, partials/_normalize.css.scss */
-button,
-input {
-  line-height: normal; }
+button, input { line-height: normal; }
 
-/*
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Corrects inability to style clickable `input` types in iOS.
- * 3. Improves usability and consistency of cursor style between image-type
- *    `input` and others.
- */
+/* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. 2. Corrects inability to style clickable `input` types in iOS. 3. Improves usability and consistency of cursor style between image-type `input` and others. */
 /* line 300, partials/_normalize.css.scss */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */ }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */ cursor: pointer; /* 3 */ }
 
-/*
- * Re-set default cursor for disabled elements.
- */
+/* Re-set default cursor for disabled elements. */
 /* line 310, partials/_normalize.css.scss */
-button[disabled],
-input[disabled] {
-  cursor: default; }
+button[disabled], input[disabled] { cursor: default; }
 
-/*
- * 1. Addresses box sizing set to `content-box` in IE 8/9.
- * 2. Removes excess padding in IE 8/9.
- */
+/* 1. Addresses box sizing set to `content-box` in IE 8/9. 2. Removes excess padding in IE 8/9. */
 /* line 320, partials/_normalize.css.scss */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */ }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ }
 
-/*
- * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
+/* 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome. 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof). */
 /* line 331, partials/_normalize.css.scss */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  /* 2 */
-  box-sizing: content-box; }
+input[type="search"] { -webkit-appearance: textfield; /* 1 */ -moz-box-sizing: content-box; -webkit-box-sizing: content-box; /* 2 */ box-sizing: content-box; }
 
-/*
- * Removes inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
+/* Removes inner padding and search cancel button in Safari 5 and Chrome on OS X. */
 /* line 344, partials/_normalize.css.scss */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
-/*
- * Removes inner padding and border in Firefox 4+.
- */
+/* Removes inner padding and border in Firefox 4+. */
 /* line 353, partials/_normalize.css.scss */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
-/*
- * 1. Removes default vertical scrollbar in IE 8/9.
- * 2. Improves readability and alignment in all browsers.
- */
+/* 1. Removes default vertical scrollbar in IE 8/9. 2. Improves readability and alignment in all browsers. */
 /* line 363, partials/_normalize.css.scss */
-textarea {
-  overflow: auto;
-  /* 1 */
-  vertical-align: top;
-  /* 2 */ }
+textarea { overflow: auto; /* 1 */ vertical-align: top; /* 2 */ }
 
-/* ==========================================================================
-   Tables
-   ========================================================================== */
-/*
- * Remove most spacing between table cells.
- */
+/* ========================================================================== Tables ========================================================================== */
+/* Remove most spacing between table cells. */
 /* line 376, partials/_normalize.css.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
 
 /* line 1, partials/_prototypes.css.scss */
-.show_more, .argument-details dd, .argument-details dt, .argument-details .name:before {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1; }
+.show_more, .argument-details dd, .argument-details dt, .argument-details .name:before { display: inline-block; *display: inline; *zoom: 1; }
 
 /* line 10, partials/_prototypes.css.scss */
-.argument-details .property, .argument-details .type + dd, [role=navigation], [role=navigation] .resource_type {
-  color: white; }
+.argument-details .property, .argument-details .type + dd, [role=navigation], [role=navigation] .resource_type { color: white; }
 
 /* line 26, partials/_prototypes.css.scss */
-.project_description p, .m-text {
-  color: #989ea8; }
+.project_description p, .m-text { color: #989ea8; }
 
 /* line 34, partials/_prototypes.css.scss */
-.m-header, .m-subheader, .argument-details .name {
-  color: #646d7c; }
+.m-header, .m-subheader, .argument-details .name { color: #646d7c; }
 
 /* line 42, partials/_prototypes.css.scss */
-.project_description p {
-  margin: 0;
-  line-height: 6px;
-  font-size: 12px;
-  padding-bottom: 4px; }
+.project_description p { margin: 0; line-height: 6px; font-size: 12px; padding-bottom: 4px; }
 
 /* line 51, partials/_prototypes.css.scss */
-.project_name h1, .project_description {
-  border-bottom: 1px solid #ffdacf; }
+.project_name, .project_description { border-bottom: 1px solid #ffdacf; }
 
 /* line 55, partials/_prototypes.css.scss */
-.argument-details .property, .argument-details .type + dd {
-  border-radius: 2px;
-  padding: 0px 4px;
-  margin-left: 3px;
-  position: relative;
-  top: 1px; }
+.argument-details .property, .argument-details .type + dd { border-radius: 2px; padding: 0px 4px; margin-left: 3px; position: relative; top: 1px; }
 
 /* line 65, partials/_prototypes.css.scss */
-.argument-details {
-  *zoom: 1; }
-  /* line 67, partials/_prototypes.css.scss */
-  .argument-details:before, .argument-details:after {
-    content: " ";
-    /* 1 */
-    display: table;
-    /* 2 */ }
-  /* line 72, partials/_prototypes.css.scss */
-  .argument-details:after {
-    clear: both; }
+.argument-details { *zoom: 1; }
+/* line 67, partials/_prototypes.css.scss */
+.argument-details:before, .argument-details:after { content: " "; /* 1 */ display: table; /* 2 */ }
+/* line 72, partials/_prototypes.css.scss */
+.argument-details:after { clear: both; }
 
 /* line 79, partials/_prototypes.css.scss */
-.argument-list .code-example, .argument-description {
-  display: none; }
-  /* line 81, partials/_prototypes.css.scss */
-  .expanded .argument-list .code-example, .argument-list .expanded .code-example, .expanded .argument-description {
-    display: block; }
+.argument-list .code-example, .argument-description { display: none; }
+/* line 81, partials/_prototypes.css.scss */
+.expanded .argument-list .code-example, .argument-list .expanded .code-example, .expanded .argument-description { display: block; }
+
+/* line 86, partials/_prototypes.css.scss */
+.declared-at, .dependencies { line-height: 12px; }
 
 /* line 6, partials/_layout.css.scss */
-[role=navigation] .navigation_title, [role=navigation] .resource_type {
-  padding-left: 20px; }
+[role=navigation] .navigation_title, [role=navigation] .resource_type { padding-left: 20px; }
 
 /* line 9, partials/_layout.css.scss */
-.project_details > *, [role=navigation] .resource, .project_name h1, .project_description {
-  padding-left: 40px; }
+.project_details > *, [role=navigation] .resource, .project_name { padding-left: 40px; }
 
 /* line 10, partials/_layout.css.scss */
-.project_details > *, [role=navigation] .resource, .project_name h1, .project_description {
-  padding-right: 40px; }
+.project_details > *, [role=navigation] .resource, .project_name { padding-right: 40px; }
 
-/* line 16, partials/_layout.css.scss */
-.accessible {
-  display: none!important; }
+/* line 17, partials/_layout.css.scss */
+.project_details > header { padding-bottom: 24px; }
+
+/* line 21, partials/_layout.css.scss */
+.project_description p, .project_description .show_more { margin-left: 40px; }
 
 /* line 22, partials/_layout.css.scss */
-body {
-  font-size: 12px;
-  position: relative; }
+.project_description p, .project_description .show_more { margin-right: 40px; }
 
 /* line 29, partials/_layout.css.scss */
-[role=navigation] {
-  background-color: #253146;
-  min-height: 100%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 214px; }
-  /* line 41, partials/_layout.css.scss */
-  [role=navigation] .navigation_links {
-    margin: 0;
-    padding-left: 0;
-    list-style: none; }
-    /* line 45, partials/_layout.css.scss */
-    [role=navigation] .navigation_links > li {
-      margin: 0;
-      padding: 0; }
-  /* line 52, partials/_layout.css.scss */
-  [role=navigation] .navigation_title {
-    background-color: #444e60;
-    display: block;
-    padding-top: 20px;
-    padding-bottom: 21px;
-    font-size: 14px; }
-  /* line 63, partials/_layout.css.scss */
-  [role=navigation] .resource a, [role=navigation] .resource_type {
-    display: block;
-    line-height: 24px;
-    font-size: 13px;
-    text-decoration: none; }
-  /* line 75, partials/_layout.css.scss */
-  [role=navigation] .resource_type {
-    background-color: #303c4f;
-    padding-top: 7px;
-    padding-bottom: 5px; }
-  /* line 85, partials/_layout.css.scss */
-  [role=navigation] .resources_list {
-    list-style: none;
-    padding-left: 0; }
-  /* line 89, partials/_layout.css.scss */
-  [role=navigation] .resource {
-    border-bottom: 1px solid #212c3f; }
-  /* line 94, partials/_layout.css.scss */
-  [role=navigation] .resource a {
-    padding-top: 7px;
-    padding-bottom: 4px;
-    color: #d3d6da; }
-  /* line 100, partials/_layout.css.scss */
-  [role=navigation] .resource + .resource {
-    border-top: 1px solid #2c374c; }
-  /* line 104, partials/_layout.css.scss */
-  [role=navigation] .resource + .resource a {
-    padding-top: 6px; }
-  /* line 108, partials/_layout.css.scss */
-  [role=navigation] .navigation_title, [role=navigation] .resource, [role=navigation] .resource_type {
-    background-image: url('../images/backgrounds/bg_nav_links.png');
-    background-repeat: repeat-y;
-    background-position: right top; }
+.accessible { display: none!important; }
 
-/* line 115, partials/_layout.css.scss */
-[role="main"] {
-  padding-left: 214px; }
+/* line 35, partials/_layout.css.scss */
+body { font-size: 12px; position: relative; }
 
-/* line 119, partials/_layout.css.scss */
-.project_details {
-  padding-bottom: 60px; }
+/* line 42, partials/_layout.css.scss */
+[role=navigation] { background-color: #253146; min-height: 100%; position: absolute; z-index: 1; top: 0; left: 0; width: 214px; }
+/* line 54, partials/_layout.css.scss */
+[role=navigation] .navigation_links { margin: 0; padding-left: 0; list-style: none; }
+/* line 58, partials/_layout.css.scss */
+[role=navigation] .navigation_links > li { margin: 0; padding: 0; }
+/* line 65, partials/_layout.css.scss */
+[role=navigation] .navigation_title { background-color: #444e60; display: block; padding-top: 20px; padding-bottom: 21px; font-size: 14px; }
+/* line 76, partials/_layout.css.scss */
+[role=navigation] .resource a, [role=navigation] .resource_type { display: block; line-height: 24px; font-size: 13px; text-decoration: none; }
+/* line 88, partials/_layout.css.scss */
+[role=navigation] .resource_type { background-color: #303c4f; padding-top: 7px; padding-bottom: 5px; }
+/* line 98, partials/_layout.css.scss */
+[role=navigation] .resources_list { list-style: none; padding-left: 0; }
+/* line 102, partials/_layout.css.scss */
+[role=navigation] .resource { border-bottom: 1px solid #212c3f; }
+/* line 107, partials/_layout.css.scss */
+[role=navigation] .resource a { padding-top: 7px; padding-bottom: 4px; color: #d3d6da; }
+/* line 113, partials/_layout.css.scss */
+[role=navigation] .resource + .resource { border-top: 1px solid #2c374c; }
+/* line 117, partials/_layout.css.scss */
+[role=navigation] .resource + .resource a { padding-top: 6px; }
+/* line 121, partials/_layout.css.scss */
+[role=navigation] .navigation_title, [role=navigation] .resource, [role=navigation] .resource_type { background-image: url('../images/backgrounds/bg_nav_links.png'); background-repeat: repeat-y; background-position: right top; }
 
-/* line 126, partials/_layout.css.scss */
-.nav-toggle {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  background: white;
-  right: 12px;
-  top: 12px; }
+/* line 128, partials/_layout.css.scss */
+[role="main"] { padding-left: 214px; }
+
+/* line 132, partials/_layout.css.scss */
+.project_details { padding-bottom: 60px; }
+
+/* line 142, partials/_layout.css.scss */
+.nav-toggle { position: absolute; width: 36px; height: 36px; background: white; right: 12px; top: 12px; }
 
 /* line 1, partials/_styles.css.scss */
-.project_name h1 {
-  color: #858B97;
-  padding-top: 51px;
-  padding-bottom: 20px;
-  margin: 0;
-  font-size: 24px;
-  line-height: 24px; }
-  /* line 16, partials/_styles.css.scss */
-  .project_name h1 span {
-    font-weight: 300; }
+.project_name { color: #858B97; padding-top: 51px; padding-bottom: 20px; margin: 0; font-size: 24px; line-height: 24px; }
+/* line 16, partials/_styles.css.scss */
+.project_name span { font-weight: 300; }
 
 /* line 21, partials/_styles.css.scss */
-.project_description {
-  padding-bottom: 39px; }
-  /* line 26, partials/_styles.css.scss */
-  .project_description p {
-    line-height: 24px;
-    padding-top: 32px;
-    padding-bottom: 15px; }
-  /* line 34, partials/_styles.css.scss */
-  .project_description .show_more {
-    margin-top: -4px; }
+.project_description { padding-bottom: 39px; }
+/* line 31, partials/_styles.css.scss */
+.project_description p { line-height: 24px; padding-top: 32px; padding-bottom: 15px; }
+/* line 40, partials/_styles.css.scss */
+.project_description .show_more { margin-top: -4px; }
 
-/* line 39, partials/_styles.css.scss */
-.show_more {
-  background-color: #f0f1f3;
-  color: #b5b9b0;
-  padding: 3px 6px 4px;
-  border-radius: 3px;
-  text-decoration: none; }
+/* line 46, partials/_styles.css.scss */
+.show_more { background-color: #f0f1f3; color: #b5b9b0; padding: 3px 6px 4px; border-radius: 3px; text-decoration: none; }
 
-/* line 48, partials/_styles.css.scss */
-.m-header {
-  margin: 0;
-  padding-top: 39px;
-  padding-bottom: 38px;
-  font-size: 24px;
-  line-height: 24px; }
+/* line 55, partials/_styles.css.scss */
+.m-header { margin: 0; padding-top: 39px; font-size: 24px; line-height: 24px; }
 
-/* line 60, partials/_styles.css.scss */
-.m-subheader {
-  font-size: 20px;
-  line-height: 24px;
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 7px; }
+/* line 67, partials/_styles.css.scss */
+.declared-at, .dependencies { display: block; font-size: 12px; padding-top: 9px; padding-bottom: 3px; }
 
-/* line 69, partials/_styles.css.scss */
-.m-text {
-  font-size: 16px;
-  line-height: 24px;
-  padding-top: 6px;
-  padding-bottom: 11px; }
-  /* line 75, partials/_styles.css.scss */
-  .m-text p {
-    margin: 0; }
+/* line 83, partials/_styles.css.scss */
+.m-subheader { font-size: 20px; line-height: 24px; margin: 0; padding-top: 0; padding-bottom: 7px; }
 
-/* line 80, partials/_styles.css.scss */
-.argument-list {
-  list-style: none; }
-  /* line 85, partials/_styles.css.scss */
-  .argument-list > li + li {
-    margin-top: 24px; }
+/* line 92, partials/_styles.css.scss */
+.m-text { font-size: 16px; line-height: 24px; padding-top: 6px; padding-bottom: 11px; }
+/* line 98, partials/_styles.css.scss */
+.m-text p { margin: 0; }
 
-/* line 90, partials/_styles.css.scss */
-.expanded .argument-details .name:before {
-  margin-right: 4px;
-  border-width: 5px 4.5px 0 4.5px;
-  border-color: #a4a9b1 transparent transparent transparent; }
+/* line 103, partials/_styles.css.scss */
+.argument-list { list-style: none; padding-left: 0; margin-bottom: 17px; }
+/* line 110, partials/_styles.css.scss */
+.argument-list > li + li { margin-top: 24px; }
+/* line 113, partials/_styles.css.scss */
+.argument-list li { margin-top: 0; }
+/* line 116, partials/_styles.css.scss */
+.argument-list .m-text { padding-bottom: 6px; }
 
-/* line 96, partials/_styles.css.scss */
-.argument-details {
-  margin-top: -2px; }
-  /* line 99, partials/_styles.css.scss */
-  .argument-details h4, .argument-details dl {
-    float: left; }
-  /* line 102, partials/_styles.css.scss */
-  .argument-details .type, .argument-details .property + dd {
-    display: none; }
-  /* line 105, partials/_styles.css.scss */
-  .argument-details dd, .argument-details dl {
-    line-height: 24px; }
-  /* line 108, partials/_styles.css.scss */
-  .argument-details dl {
-    margin: -3px 0 5px;
-    text-transform: uppercase; }
-  /* line 112, partials/_styles.css.scss */
-  .argument-details .default, .argument-details .default + dd {
-    text-transform: none; }
-  /* line 115, partials/_styles.css.scss */
-  .argument-details h4 {
-    margin: 0; }
-  /* line 118, partials/_styles.css.scss */
-  .argument-details dd {
-    margin: 0; }
-  /* line 121, partials/_styles.css.scss */
-  .argument-details dd, .argument-details dt {
-    vertical-align: bottom; }
-  /* line 125, partials/_styles.css.scss */
-  .argument-details .name {
-    font-weight: normal;
-    margin-right: 6px;
-    font-size: 16px;
-    margin-top: -4px;
-    line-height: 24px;
-    margin-bottom: 4px;
-    cursor: pointer; }
-    /* line 134, partials/_styles.css.scss */
-    .argument-details .name:before {
-      content: " ";
-      width: 0px;
-      height: 0px;
-      border-style: solid;
-      border-width: 4.5px 0 4.5px 5px;
-      border-color: transparent transparent transparent #a4a9b1;
-      margin-right: 7px; }
-  /* line 146, partials/_styles.css.scss */
-  .argument-details .property {
-    background-color: #ffabab; }
-  /* line 150, partials/_styles.css.scss */
-  .argument-details .type + dd {
-    background-color: #d0d2d7; }
-  /* line 154, partials/_styles.css.scss */
-  .argument-details .default + dd, .argument-details .default {
-    font-size: 14px;
-    line-height: 24px; }
-  /* line 158, partials/_styles.css.scss */
-  .argument-details .default {
-    color: #858B97;
-    margin-left: 7px; }
-    /* line 162, partials/_styles.css.scss */
-    .argument-details .default:after {
-      content: ":"; }
-  /* line 166, partials/_styles.css.scss */
-  .argument-details .default + dd {
-    color: #858B97; }
+/* line 121, partials/_styles.css.scss */
+.expanded .argument-details .name:before { margin-right: 4px; border-width: 5px 4.5px 0 4.5px; border-color: #a4a9b1 transparent transparent transparent; }
 
-/* line 175, partials/_styles.css.scss */
-pre {
-  background-color: #fff9f7; }
+/* line 127, partials/_styles.css.scss */
+.argument-details { margin-top: -2px; }
+/* line 130, partials/_styles.css.scss */
+.argument-details h3, .argument-details dl { float: left; }
+/* line 133, partials/_styles.css.scss */
+.argument-details .type, .argument-details .property + dd { display: none; }
+/* line 136, partials/_styles.css.scss */
+.argument-details dd, .argument-details dl { line-height: 24px; }
+/* line 139, partials/_styles.css.scss */
+.argument-details dl { margin: -3px 0 5px; text-transform: uppercase; }
+/* line 143, partials/_styles.css.scss */
+.argument-details .default, .argument-details .default + dd { text-transform: none; }
+/* line 146, partials/_styles.css.scss */
+.argument-details h4 { margin: 0; }
+/* line 149, partials/_styles.css.scss */
+.argument-details dd { margin: 0; }
+/* line 152, partials/_styles.css.scss */
+.argument-details dd, .argument-details dt { vertical-align: bottom; }
+/* line 156, partials/_styles.css.scss */
+.argument-details .name { font-weight: normal; margin-right: 6px; font-size: 16px; margin-top: -4px; line-height: 24px; margin-bottom: 4px; cursor: pointer; }
+/* line 165, partials/_styles.css.scss */
+.argument-details .name:before { content: " "; width: 0px; height: 0px; border-style: solid; border-width: 4.5px 0 4.5px 5px; border-color: transparent transparent transparent #a4a9b1; margin-right: 7px; }
+/* line 177, partials/_styles.css.scss */
+.argument-details .property { background-color: #ffabab; }
+/* line 181, partials/_styles.css.scss */
+.argument-details .type + dd { background-color: #d0d2d7; }
+/* line 185, partials/_styles.css.scss */
+.argument-details .default + dd, .argument-details .default { font-size: 14px; line-height: 24px; }
+/* line 189, partials/_styles.css.scss */
+.argument-details .default { color: #858B97; margin-left: 7px; }
+/* line 193, partials/_styles.css.scss */
+.argument-details .default:after { content: ":"; }
+/* line 197, partials/_styles.css.scss */
+.argument-details .default + dd { color: #858B97; }
 
-/*  Mobile devices Layout: 768px.
-    Inherits styles from: Default Layout.
+/* line 206, partials/_styles.css.scss */
+pre { background-color: #fff9f7; }
+
+/* line 210, partials/_styles.css.scss */
+.code-example { margin-top: 5px; margin-bottom: 17px; }
+
+/* line 215, partials/_styles.css.scss */
+.m-method { padding-top: 5px; }
+/* line 217, partials/_styles.css.scss */
+.m-method h2 { margin: 0; }
+/* line 220, partials/_styles.css.scss */
+.m-method .declared-at { padding-bottom: 10px; }
+/* line 223, partials/_styles.css.scss */
+.m-method .code-example { margin-bottom: 0; }
+/* line 226, partials/_styles.css.scss */
+.m-method .method-arguments { margin-top: 5px; }
+/* line 229, partials/_styles.css.scss */
+.m-method .argument-list { margin-bottom: 5px; }
+
+/*  Mobile devices Layout: 768px. Inherits styles from: Default Layout.
 -----------------------------------------------------------------*/
-@media only screen and (max-width: 991px) {
-  /* keyframes for slidein from sides */
-  @-webkit-keyframes slide_in {
-    /* line 5, partials/responsive/_mobile_devices.css.scss */
-    from {
-      -webkit-transform: translateX(-154px); }
-
+@media only screen and (max-width: 991px) { /* keyframes for slidein from sides */
+  @-webkit-keyframes slide_in { /* line 5, partials/responsive/_mobile_devices.css.scss */
+    from { -webkit-transform: translateX(-154px); }
     /* line 6, partials/responsive/_mobile_devices.css.scss */
-    to {
-      -webkit-transform: translateX(0); } }
-
-  @-webkit-keyframes slide_out {
-    /* line 9, partials/responsive/_mobile_devices.css.scss */
-    from {
-      -webkit-transform: translateX(0); }
-
+    to { -webkit-transform: translateX(0); } }
+  @-webkit-keyframes slide_out { /* line 9, partials/responsive/_mobile_devices.css.scss */
+    from { -webkit-transform: translateX(0); }
     /* line 10, partials/responsive/_mobile_devices.css.scss */
-    to {
-      -webkit-transform: translateX(-154px); } }
-
-  @-moz-keyframes slide_in {
-    /* line 14, partials/responsive/_mobile_devices.css.scss */
-    from {
-      -webkit-transform: translateX(-154px); }
-
+    to { -webkit-transform: translateX(-154px); } }
+  @-moz-keyframes slide_in { /* line 14, partials/responsive/_mobile_devices.css.scss */
+    from { -webkit-transform: translateX(-154px); }
     /* line 15, partials/responsive/_mobile_devices.css.scss */
-    to {
-      -webkit-transform: translateX(0); } }
-
-  @-moz-keyframes slide_out {
-    /* line 18, partials/responsive/_mobile_devices.css.scss */
-    from {
-      -webkit-transform: translateX(0); }
-
+    to { -webkit-transform: translateX(0); } }
+  @-moz-keyframes slide_out { /* line 18, partials/responsive/_mobile_devices.css.scss */
+    from { -webkit-transform: translateX(0); }
     /* line 19, partials/responsive/_mobile_devices.css.scss */
-    to {
-      -webkit-transform: translateX(-154px); } }
-
-  @keyframes slide_in {
-    /* line 23, partials/responsive/_mobile_devices.css.scss */
-    from {
-      transform: translateX(-154px); }
-
+    to { -webkit-transform: translateX(-154px); } }
+  @keyframes slide_in { /* line 23, partials/responsive/_mobile_devices.css.scss */
+    from { transform: translateX(-154px); }
     /* line 24, partials/responsive/_mobile_devices.css.scss */
-    to {
-      transform: translateX(0); } }
-
-  @keyframes slide_out {
-    /* line 27, partials/responsive/_mobile_devices.css.scss */
-    from {
-      transform: translateX(0); }
-
+    to { transform: translateX(0); } }
+  @keyframes slide_out { /* line 27, partials/responsive/_mobile_devices.css.scss */
+    from { transform: translateX(0); }
     /* line 28, partials/responsive/_mobile_devices.css.scss */
-    to {
-      transform: translateX(-154px); } }
-
+    to { transform: translateX(-154px); } }
   /* line 32, partials/responsive/_mobile_devices.css.scss */
-  [role=navigation], [role=main] {
-    -webkit-transform: translateX(-154px);
-    -moz-transform: translateX(-154px);
-    -ms-transform: translateX(-154px);
-    -o-transform: translateX(-154px);
-    transform: translateX(-154px);
-    -webkit-animation-timing-function: ease-out;
-    -moz-animation-timing-function: ease-out;
-    -ms-animation-timing-function: ease-out;
-    -o-animation-timing-function: ease-out;
-    animation-timing-function: ease-out;
-    -webkit-animation-duration: 0.3s;
-    -moz-animation-duration: 0.3s;
-    -ms-animation-duration: 0.3s;
-    -o-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden; }
-
+  [role=navigation], [role=main] { -webkit-transform: translateX(-154px); -moz-transform: translateX(-154px); -ms-transform: translateX(-154px); -o-transform: translateX(-154px); transform: translateX(-154px); -webkit-animation-timing-function: ease-out; -moz-animation-timing-function: ease-out; -ms-animation-timing-function: ease-out; -o-animation-timing-function: ease-out; animation-timing-function: ease-out; -webkit-animation-duration: 0.3s; -moz-animation-duration: 0.3s; -ms-animation-duration: 0.3s; -o-animation-duration: 0.3s; animation-duration: 0.3s; -webkit-backface-visibility: hidden; -moz-backface-visibility: hidden; -ms-backface-visibility: hidden; -o-backface-visibility: hidden; backface-visibility: hidden; }
   /* line 40, partials/responsive/_mobile_devices.css.scss */
-  [role=main] {
-    margin-right: -154px; }
-
+  [role=main] { margin-right: -154px; }
   /* line 47, partials/responsive/_mobile_devices.css.scss */
-  .side_panel_visible [role=navigation], .side_panel_visible [role=main] {
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
-    -webkit-animation-name: slide_in;
-    -moz-animation-name: slide_in;
-    -ms-animation-name: slide_in;
-    -o-animation-name: slide_in;
-    animation-name: slide_in; }
-
+  .side_panel_visible [role=navigation], .side_panel_visible [role=main] { -webkit-transform: translateX(0); -moz-transform: translateX(0); -ms-transform: translateX(0); -o-transform: translateX(0); transform: translateX(0); -webkit-animation-name: slide_in; -moz-animation-name: slide_in; -ms-animation-name: slide_in; -o-animation-name: slide_in; animation-name: slide_in; }
   /* line 55, partials/responsive/_mobile_devices.css.scss */
-  .side_panel_hidden [role=navigation], .side_panel_hidden [role=main] {
-    -webkit-transform: translateX(-154px);
-    -moz-transform: translateX(-154px);
-    -ms-transform: translateX(-154px);
-    -o-transform: translateX(-154px);
-    transform: translateX(-154px);
-    -webkit-animation-name: slide_out;
-    -moz-animation-name: slide_out;
-    -ms-animation-name: slide_out;
-    -o-animation-name: slide_out;
-    animation-name: slide_out; } }
-/*  Tablet Layout: 768px.
-    Inherits styles from: Default Layout.
+  .side_panel_hidden [role=navigation], .side_panel_hidden [role=main] { -webkit-transform: translateX(-154px); -moz-transform: translateX(-154px); -ms-transform: translateX(-154px); -o-transform: translateX(-154px); transform: translateX(-154px); -webkit-animation-name: slide_out; -moz-animation-name: slide_out; -ms-animation-name: slide_out; -o-animation-name: slide_out; animation-name: slide_out; } }
+/*  Tablet Layout: 768px. Inherits styles from: Default Layout.
 -----------------------------------------------------------------*/
-/*  Mobile Layout: 320px.
-    Inherits styles from: Default Layout.
+/*  Mobile Layout: 320px. Inherits styles from: Default Layout.
 ---------------------------------------------*/

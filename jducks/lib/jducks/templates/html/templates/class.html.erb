@@ -7,12 +7,12 @@
       :source=>source
     } %>
     <% if dependencies %>
-    <small>Dependencies: <%= dependencies.map do |dependency|
+    <small class="dependencies">Dependencies: <%= dependencies.map do |dependency|
       %~<a href="#{url_for dependency}">#{dependency}</a>~
     end.join(",") %></small><%end%>
 
     <% if dependency_of && !dependency_of.empty? %>
-    <small>Dependency of: <%= dependency_of.map do |dependency|
+    <small class="dependencies">Dependency of: <%= dependency_of.map do |dependency|
       %~<a href="#{url_for dependency}">#{dependency}</a>~
     end.join(",") %></small><%end%>
   </header>
@@ -41,7 +41,7 @@
           arguments = method_properties["arguments"]
           method_name = method_properties["method"]
           example = method_properties["example"] %>
-        <article id="<%=method_properties['method']%>">
+        <article id="<%=method_properties['method']%>" class="m-method">
           <h2><%=method_name%></h2>
           <%= render "partials/declared_at", :locals=>{
             :file_path=>parsed_items[:sources][method_properties["source"]][:path],
@@ -49,7 +49,7 @@
             :source=>method_properties["source"]
           } %>
           <pre class="code-example"><code class="javascript"><%= function_declaration method_name, arguments %></code></pre>
-          <% if arguments && arguments.length != 0 %><h3 class="m-subheader" id="<%=method_name%>-arguments">Arguments</h3>
+          <% if arguments && arguments.length != 0 %><h3 class="m-subheader method-arguments" id="<%=method_name%>-arguments">Arguments</h3>
           <%= render "partials/arguments_list", :locals=>{:arguments=>arguments, :method_name=>method_name} %>
           <% end %>
           <% if example %>

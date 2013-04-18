@@ -33,11 +33,11 @@ $(window).load(function(){
     }
   }
 
-  // build_vertical_grid(vincrement, vgrid_color, vopacity);
+  build_vertical_grid(vincrement, vgrid_color, vopacity);
 
-  // $(window).on("resize", function(){
-  //   vcontainer.html("")
-  //   build_vertical_grid(vincrement, vgrid_color, vopacity);
-  // })
+  $(window).on("resize", function(){
+    vcontainer.html("")
+    build_vertical_grid(vincrement, vgrid_color, vopacity);
+  })
 })
 ;
