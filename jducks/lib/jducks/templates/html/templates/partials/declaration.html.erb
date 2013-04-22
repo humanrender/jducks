@@ -1,0 +1,10 @@
+<%
+  section_label = label.nil? ? "Declaration" : label
+%><section id="<%=section_label.downcase%>">
+  <h1 class="m-subheader"><%=section_label%></h1>
+  <pre class="code-example"><code class="javascript"><%= function_declaration resource_name, arguments %></code></pre>
+
+  <% if arguments %><h2 class="m-subheader" id="arguments">Arguments</h2>
+  <%= render "partials/arguments_list", :locals=>{:arguments=>arguments, :method_name => "constructor"} %>
+  <% end %>
+</section>

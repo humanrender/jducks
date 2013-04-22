@@ -67,34 +67,64 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, officiis, facilis sunt doloribus necessitatibus distinctio eos qui laborum numquam quam quas reiciendis sequi vel nisi asperiores! Animi, voluptate in voluptatibus!</p>
       <a href="#" class="show_more">Show more details</a>
     </section>
-      <article role="main" class="function nine-twelfths grid__item mtm iplm iprm">
-  <h1 class="m-header">StringUtils.trim</h1>
+      <article class="project_details">
+  <header>
+  <h1 class="m-header" id="title">StringUtils.trim<small></small></h1>
+  <small class="declared-at">Declared at <a href="./example/app/docs/StringUtils/trim.html#line-44">example/app/string_utils.js#44</a></small>
   
-  <small>Dependencies: <a href="to_s.html">StringUtils.to_s</a></small>
+  <small class="dependencies">Dependencies: <a href="to_s.html">StringUtils.to_s</a></small>
 
   
-
-  <h2>Description</h2>
-  <p>Remove whitespaces from both ends</p>
-  
-
-  <h2>Declaration</h2>
-  <p></p>
-  
-  
-  
-  <h2>Arguments</h2>
-  <dl>
-    <dt>str</dt>
-    <dd>{:required=>false, :default=>"undefined", :type=>"String", :description=>"Text"}</dd>
-  </dl>
-  
+</header>
 
   
+  <section id="description">
+    <h1 class="m-subheader">Description</h1>
+    <div class="m-text">
+      <p>Remove whitespaces from both ends</p>
+    </div>
+  </section>
   
-  <h2>Example Usage</h2>
-  <pre>trim(" Trime me! "); // "Trim me!"
-</pre>
+  <section id="constructor">
+    <h1 class="m-subheader">Declaration</h1>
+    <pre class="code-example"><code class="javascript">function trim(str)</code></pre>
+  </section>
+  
+  
+
+  <div><h2 class="m-subheader" id="arguments">Arguments</h2>
+  <ul class="argument-list">
+  <li data-collapsable>
+    <div class="argument-details">
+      <h3 id="constructor-argument-str" class="name" data-toggle>str</h3>
+      <dl>
+        <dt class="type">Argument type</dt>
+        <dd>String</dd>
+        
+        <dt class="default">default</dt>
+        <dd>undefined</dd>
+      </dl>
+    </div>
+    
+    <div class="argument-description" data-description>
+      <div class="m-text">
+        <p>Text</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+  </div>
+
+  
+  
+  
+    <h3 class="m-subheader">Example</h3>
+    <div>
+      <pre class="code-example"><code class="javascript">trim(" Trime me! "); // "Trim me!"
+</code></pre>
+    </div>
+  
   
   
 

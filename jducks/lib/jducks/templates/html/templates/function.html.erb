@@ -4,40 +4,48 @@
   # %~function(#{(arguments || {}).map{|name, description| 
   #   "#{"<span>#{$~[1]}</span> " if description.match /^\((.+?)\)/}#{name}" 
   # }.join(", ")})#{":#{return_type returns}"}~
-%><article role="main" class="function nine-twelfths grid__item mtm iplm iprm">
-  <h1 class="m-header"><%= complete_resource_name %></h1>
-  <% if dependencies %>
-  <small>Dependencies: <%= dependencies.map do |dependency|
-    %~<a href="#{url_for dependency}">#{dependency}</a>~
-  end.join(",") %></small><%end%>
+%><article class="project_details">
+  <%= render "partials/project_details_header", :locals=>{
+    :complete_resource_name=>complete_resource_name,
+    :extends=>extends,
+    :parsed_items=>parsed_items,
+    :declared_at=>declared_at,
+    :source=>source,
+    :dependencies=>dependencies,
+    :dependency_of=>dependency_of
+  } %>
 
-  <% if dependency_of && !dependency_of.empty? %>
-  <small>Dependency of: <%= dependency_of.map do |dependency|
-    %~<a href="#{url_for dependency}">#{dependency}</a>~
-  end.join(",") %></small><%end%>
-
-  <% if description %><h2>Description</h2>
-  <p><%= description %></p>
-  <% end %>
-
-  <h2>Declaration</h2>
-  <p><%= declaration %></p>
+  <% if description %>
+  <section id="description">
+    <h1 class="m-subheader">Description</h1>
+    <div class="m-text">
+      <p><%= description %></p>
+    </div>
+  </section><% end %>
   
-  <% if returns %><h2>Returns</h2>
-  <p><%= returns %></p>
-  <% end %>
+  <section id="constructor">
+    <h1 class="m-subheader">Declaration</h1>
+    <pre class="code-example"><code class="javascript"><%= function_declaration resource_name, arguments %></code></pre>
+  </section>
   
-  <% if arguments %><h2>Arguments</h2>
-  <dl><% arguments.each do |arg, desc| %>
-    <dt><%=arg%></dt>
-    <dd><%=desc%></dd>
-  <% end %></dl>
+  <% if returns %><h3 class="m-subheader">Returns</h3>
+  <div class="m-text">
+    <p><%= returns %></p>
+  </div>
   <% end %>
+
+  <% if arguments %><div><h2 class="m-subheader" id="arguments">Arguments</h2>
+  <%= render "partials/arguments_list", :locals=>{:arguments=>arguments, :method_name => "constructor"} %>
+  </div><% end %>
 
   <% if example  || html_example%>
   
-  <h2>Example Usage</h2>
-  <pre><%= example %></pre>
+  <% if example %>
+    <h3 class="m-subheader">Example</h3>
+    <div>
+      <pre class="code-example"><code class="javascript"><%=example%></code></pre>
+    </div>
+  <% end %>
   
   <% if html_example %>
   <div>

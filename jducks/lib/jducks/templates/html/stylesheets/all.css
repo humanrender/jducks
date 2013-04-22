@@ -330,8 +330,10 @@ pre { background-color: #fff9f7; }
 /* line 223, partials/_styles.css.scss */
 .m-method .code-example { margin-bottom: 0; }
 /* line 226, partials/_styles.css.scss */
-.m-method .method-arguments { margin-top: 5px; }
+.m-method .method-title { margin-top: 5px; }
 /* line 229, partials/_styles.css.scss */
+.m-method .returns { padding-bottom: 6px; }
+/* line 232, partials/_styles.css.scss */
 .m-method .argument-list { margin-bottom: 5px; }
 
 /*  Mobile devices Layout: 768px. Inherits styles from: Default Layout.

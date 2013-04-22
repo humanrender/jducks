@@ -67,36 +67,68 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, officiis, facilis sunt doloribus necessitatibus distinctio eos qui laborum numquam quam quas reiciendis sequi vel nisi asperiores! Animi, voluptate in voluptatibus!</p>
       <a href="#" class="show_more">Show more details</a>
     </section>
-      <article role="main" class="function nine-twelfths grid__item mtm iplm iprm">
-  <h1 class="m-header">to_s</h1>
+      <article class="project_details">
+  <header>
+  <h1 class="m-header" id="title">to_s<small></small></h1>
+  <small class="declared-at">Declared at <a href="./example/app/docs/to_s.html#line-1">example/app/string_utils.js#1</a></small>
   
 
   
-  <small>Dependency of: <a href="trim.html">trim</a></small>
-
-  <h2>Description</h2>
-  <p>Converts objecto to string</p>
-  
-
-  <h2>Declaration</h2>
-  <p></p>
-  
-  <h2>Returns</h2>
-  <p>(String) Object to string</p>
-  
-  
-  <h2>Arguments</h2>
-  <dl>
-    <dt>str</dt>
-    <dd>{:required=>false, :default=>"undefined", :type=>"*", :description=>"Object"}</dd>
-  </dl>
-  
+  <small class="dependencies">Dependency of: <a href="trim.html">trim</a></small>
+</header>
 
   
+  <section id="description">
+    <h1 class="m-subheader">Description</h1>
+    <div class="m-text">
+      <p>Converts objecto to string</p>
+    </div>
+  </section>
   
-  <h2>Example Usage</h2>
-  <pre>to_s(1); // "1"
-</pre>
+  <section id="constructor">
+    <h1 class="m-subheader">Declaration</h1>
+    <pre class="code-example"><code class="javascript">function to_s(str)</code></pre>
+  </section>
+  
+  <h3 class="m-subheader">Returns</h3>
+  <div class="m-text">
+    <p>(String) Object to string</p>
+  </div>
+  
+
+  <div><h2 class="m-subheader" id="arguments">Arguments</h2>
+  <ul class="argument-list">
+  <li data-collapsable>
+    <div class="argument-details">
+      <h3 id="constructor-argument-str" class="name" data-toggle>str</h3>
+      <dl>
+        <dt class="type">Argument type</dt>
+        <dd>*</dd>
+        
+        <dt class="default">default</dt>
+        <dd>undefined</dd>
+      </dl>
+    </div>
+    
+    <div class="argument-description" data-description>
+      <div class="m-text">
+        <p>Object</p>
+      </div>
+    </div>
+  </li>
+  
+</ul>
+  </div>
+
+  
+  
+  
+    <h3 class="m-subheader">Example</h3>
+    <div>
+      <pre class="code-example"><code class="javascript">to_s(1); // "1"
+</code></pre>
+    </div>
+  
   
   
 

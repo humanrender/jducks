@@ -1,0 +1,17 @@
+<header>
+  <h1 class="m-header" id="title"><%= complete_resource_name %><small><% if extends %>extends: <a href="<%=url_for extends%>"><%=extends%></a><%end%></small></h1>
+  <%= render "partials/declared_at", :locals=>{
+    :file_path=>parsed_items[:sources][source][:path],
+    :line=>declared_at,
+    :source=>source
+  } %>
+  <% if dependencies %>
+  <small class="dependencies">Dependencies: <%= dependencies.map do |dependency|
+    %~<a href="#{url_for dependency}">#{dependency}</a>~
+  end.join(",") %></small><%end%>
+
+  <% if dependency_of && !dependency_of.empty? %>
+  <small class="dependencies">Dependency of: <%= dependency_of.map do |dependency|
+    %~<a href="#{url_for dependency}">#{dependency}</a>~
+  end.join(",") %></small><%end%>
+</header>

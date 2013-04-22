@@ -139,6 +139,7 @@ StringUtils.SuperString.prototype.trim = function(){
     str.to_json(true) // "['Hello']"
     str.to_json(false) // ["Hello"]
     str.to_json() // ["Hello"]
+  returns: "(Object) JSON representation of the string"
 ***/
 
 StringUtils.SuperString.prototype.to_json = function(string){
